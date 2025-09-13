@@ -6,7 +6,4 @@ from . import views
 
 urlpatterns = [
     path("", views.index, name = "index"), #viewsのindex関数を呼び出す
-    
-    # path("greet/<str:name>/", views.greet, name = "greet")
-    
 ]
