@@ -3,24 +3,13 @@ from django.shortcuts import render
 
 # 関数ベースビュー
 # ビュー関数
-def index(request):
-    question_list = [
-        "人ですか",
-        "あなたは僕ですか？",
-        "私の母ですか？",
-    ]
-    context = {
-        "question_list": question_list,
-        "is_polled": True,
-        "polled_msg": "投票誠にありがとうございました",
-        "not_polled_msg": "とうひょうしてください",
-        "user_name": "takasi"
-    }
 
+from.models import Question
+
+def index(request):
+    all_question = Question.objects.all()
+    context = {
+        "all_question": all_question
+    }
     
     return render(request, "main/index.html", context)
-
-
- 
-
-
